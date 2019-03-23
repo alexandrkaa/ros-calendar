@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="calendar-page">
+    <h1 class="calendar-page__header">Календарь</h1>
+    <ul class="calendar-page__calendar-header calendar-header">
+      <li class="calendar-header__day"><span>ПН</span></li>
+      <li class="calendar-header__day"><span>ВТ</span></li>
+      <li class="calendar-header__day"><span>СР</span></li>
+      <li class="calendar-header__day"><span>ЧТ</span></li>
+      <li class="calendar-header__day"><span>ПТ</span></li>
+      <li class="calendar-header__day"><span>СБ</span></li>
+      <li class="calendar-header__day"><span>ВС</span></li>
+    </ul>
+    <div class="calendar-page__month-name">
+      <button class="button button--prev"><<<</button>
+      <h2 class="calendar-page__month">Март</h2>
+      <button class="button button--nexy">>>></button>
+    </div>
+    <ul class="calendar">
+      <li class="calendar__day calendar__day2"><span class="calendar__day-day">1</span></li>
+      <li class="calendar__day">
+        <ul class="calendar__dat-events events">
+          <li class="events__event">
+            12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">JS meetup</a>
+          </li>
+          <li class="events__event">
+            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">SQL meetup</a>
+          </li>
+        </ul>
+        <span class="calendar__day-day">2</span>
+      </li>
+      <li class="calendar__day"><span class="calendar__day-day">3</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">4</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">5</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">6</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">7</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">8</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">9</span></li>
+      <li class="calendar__day">
+        <ul class="calendar__dat-events events">
+          <li class="events__event">
+            12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">JS meetup</a>
+          </li>
+          <li class="events__event">
+            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">SQL meetup</a>
+          </li>
+          <li class="events__event">
+            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">CSS meetup</a>
+          </li>
+          <li class="events__event">
+            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">HTML meetup</a>
+          </li>
+        </ul>
+        <span class="calendar__day-day">10</span>
+      </li>
+      <li class="calendar__day"><span class="calendar__day-day">11</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">12</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">13</span></li>
+      <li class="calendar__day">
+        <ul class="calendar__dat-events events">
+          <li class="events__event">
+            12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">Word meetup</a>
+          </li>
+          <li class="events__event">
+            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">Excel meetup</a>
+          </li>
+          <li class="events__event">
+            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">PP meetup</a>
+          </li>
+        </ul>
+        <span class="calendar__day-day">14</span>
+      </li>
+      <li class="calendar__day"><span class="calendar__day-day">15</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">16</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">17</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">18</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">19</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">20</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">21</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">22</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">23</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">24</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">25</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">26</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">27</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">28</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">29</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">30</span></li>
+      <li class="calendar__day"><span class="calendar__day-day">31</span></li>
+    </ul>
+
+    <section class="apply">
+      <h2 class="apply__header">Подайте заявку на meetup</h2>
+      <form action="/" class="apply-form">
+        <div class="form-group">
+          <input type="text" placeholder="Укажите тему" name="meetup_name" class="text-input">
+        </div>
+        <button class="apply-form__submit">Отправить</button>
+      </form>
+    </section>
+  </section>
+</body>
+</html>
