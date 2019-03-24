@@ -143,12 +143,23 @@
   flex-direction: column;
   color: #cccccc;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 17px;
 }
 
 .events__event-link {
   font: inherit;
   color: #000000;
+  display: inline;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.events__event-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .calendar-page__month-name {
@@ -274,16 +285,135 @@
   padding: 0;
   margin: 0;
   margin-left: 10px;
-  background-image: url("../img/vote.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 24px 24px;
+  position: relative;
 }
 
-.vote__like-button:hover {
-  background-image: url("../img/vote-hover.svg");
+.vote__like-button::before,
+.vote__like-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border-radius: 12px;
 }
 
-.vote__like-button--liked {
-  background-image: url("../img/vote-voted.svg"); 
+.vote__like-button::before {
+  box-shadow: inset 0 0 2px 0 #cccccc;
+}
+
+.vote__like-button::after {
+  width: 12px;
+  height: 12px;
+  top: 6px;
+  right: 1px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.vote__like-button:hover::before {
+  box-shadow: inset 0 0 2px 0 #df0031;
+}
+
+.vote__like-button--voted::after {
+  background-color: #df0031;
+}
+
+.popup-layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.popup-layer--visible {
+  display: flex;
+}
+
+.popup {
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  max-width: 50%;
+  position: relative;
+}
+
+.popup__header {
+  border-bottom: 1px solid #cccccc;
+  padding: 5px 0;
+}
+
+.popup__header-time {
+  color: #cccccc;
+}
+
+.popup__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  box-shadow: none;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.popup__close::before,
+.popup__close::after {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  transform-origin: center;
+  top: 11px;
+  left: 0;
+  background-color: #000000;
+  content: "";
+}
+
+.popup__close::before {
+  transform: rotate(45deg);
+}
+
+.popup__close::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .popup-layer {
+    padding: 20px;
+  }
+
+  .popup {
+    max-width: 100%;
+  }
+}
+
+.persons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 12px;
+}
+
+.persons-list__person {
+  position: relative;
+}
+
+.persons-list__person::before {
+  content: "/";
+  color: #df0031;
+  position: absolute;
+  left: -12px;
+  top: 0;
 }

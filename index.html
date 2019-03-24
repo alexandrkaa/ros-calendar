@@ -7,7 +7,8 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script> -->
+  <script defer src="//code.jquery.com/jquery-3.3.1.min.js"></script>
   <script defer src="js/app.js"></script>
 </head>
 <body>
@@ -32,10 +33,10 @@
       <li class="calendar__day calendar__day--has-events">
         <ul class="calendar__dat-events events">
           <li class="events__event">
-            12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">JS meetup</a>
+            12:00 <button class="events__event-link" type="button">JS meetup</a>
           </li>
           <li class="events__event">
-            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">SQL meetup</a>
+            16:00 <button class="events__event-link" type="button">SQL meetup</a>
           </li>
         </ul>
         <span class="calendar__day-day">2</span>
@@ -50,16 +51,16 @@
       <li class="calendar__day calendar__day--has-events">
         <ul class="calendar__dat-events events">
           <li class="events__event">
-            12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">JS meetup</a>
+            12:00 <button class="events__event-link" type="button">JS meetup</a>
           </li>
           <li class="events__event">
-            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">SQL meetup</a>
+            16:00 <button class="events__event-link" type="button">SQL meetup</a>
           </li>
           <li class="events__event">
-            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">CSS meetup</a>
+            16:00 <button class="events__event-link" type="button">CSS meetup</a>
           </li>
           <li class="events__event">
-            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">HTML meetup</a>
+            16:00 <button class="events__event-link" type="button">HTML meetup</a>
           </li>
         </ul>
         <span class="calendar__day-day">10</span>
@@ -70,13 +71,13 @@
       <li class="calendar__day calendar__day--has-events">
         <ul class="calendar__dat-events events">
           <li class="events__event">
-            12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">Word meetup</a>
+            12:00 <button class="events__event-link" type="button">Word meetup</a>
           </li>
           <li class="events__event">
-            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">Excel meetup</a>
+            16:00 <button class="events__event-link" type="button">Excel meetup</a>
           </li>
           <li class="events__event">
-            16:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">PP meetup</a>
+            16:00 <button class="events__event-link" type="button">PP meetup</>
           </li>
         </ul>
         <span class="calendar__day-day">14</span>
@@ -99,12 +100,27 @@
       <li class="calendar__day"><span class="calendar__day-day">30</span></li>
       <li class="calendar__day"><span class="calendar__day-day">31</span></li>
     </ul>
+    <section class="popup-layer">
+      <div class="popup">
+        <h3 class="popup__header">JS meetup <span class="popup__header-time">12:00</span></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam est incidunt vitae quisquam, quod at temporibus veniam ad. Enim aperiam saepe ex impedit, perferendis alias suscipit maxime deserunt nihil eveniet!</p>
+        <h4 class="popup__subheader">Участиники</h4>
+        <ul class="persons-list">
+          <li class="persons-list__person">Константин Константинопольский (отдел по работе с корпоративными клиентами)</li>
+          <li class="persons-list__person">Иван Иванов (бухгалтерия)</li>
+          <li class="persons-list__person">Петр Петров (отдел обучения)</li>
+        </ul>
+        <button class="popup__close">
+          <span class="visually-hidden">Close</span>
+        </button>
+      </div>
+    </section>
   </section>
   <section class="apply">
     <h2 class="apply__header">Подайте заявку на meetup</h2>
     <form action="/" class="apply-form">
       <div class="form-group">
-        <input type="text" placeholder="Укажите тему" name="meetup_name" class="text-input">
+        <input class="text-input meetup_name" type="text" placeholder="Укажите тему" name="meetup_name">
       </div>
       <button class="apply-form__submit">Отправить</button>
     </form>
@@ -123,7 +139,7 @@
         </button>
       </li>
       <li class="vote__item">CSS meetup 
-        <button class="vote__like-button">
+        <button class="vote__like-button vote__like-button--voted">
           <span class="visually-hidden">like</span>
         </button>
       </li>
