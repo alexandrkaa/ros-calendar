@@ -7,6 +7,8 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script defer src="js/app.js"></script>
 </head>
 <body>
   <section class="calendar-page">
@@ -21,13 +23,13 @@
       <li class="calendar-header__day"><span>ВС</span></li>
     </ul>
     <div class="calendar-page__month-name">
-      <button class="button button--prev"><<<</button>
+      <a href="/?month=1" class="button button--prev"><<<</a>
       <h2 class="calendar-page__month">Март</h2>
-      <button class="button button--nexy">>>></button>
+      <a href="/?month=-1" class="button button--next">>>></a>
     </div>
     <ul class="calendar">
       <li class="calendar__day calendar__day2"><span class="calendar__day-day">1</span></li>
-      <li class="calendar__day">
+      <li class="calendar__day calendar__day--has-events">
         <ul class="calendar__dat-events events">
           <li class="events__event">
             12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">JS meetup</a>
@@ -45,7 +47,7 @@
       <li class="calendar__day"><span class="calendar__day-day">7</span></li>
       <li class="calendar__day"><span class="calendar__day-day">8</span></li>
       <li class="calendar__day"><span class="calendar__day-day">9</span></li>
-      <li class="calendar__day">
+      <li class="calendar__day calendar__day--has-events">
         <ul class="calendar__dat-events events">
           <li class="events__event">
             12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">JS meetup</a>
@@ -65,7 +67,7 @@
       <li class="calendar__day"><span class="calendar__day-day">11</span></li>
       <li class="calendar__day"><span class="calendar__day-day">12</span></li>
       <li class="calendar__day"><span class="calendar__day-day">13</span></li>
-      <li class="calendar__day">
+      <li class="calendar__day calendar__day--has-events">
         <ul class="calendar__dat-events events">
           <li class="events__event">
             12:00 <a class="events__event-link" href="#" target="_blank" rel="noopener noreferrer">Word meetup</a>
@@ -97,16 +99,45 @@
       <li class="calendar__day"><span class="calendar__day-day">30</span></li>
       <li class="calendar__day"><span class="calendar__day-day">31</span></li>
     </ul>
-
-    <section class="apply">
-      <h2 class="apply__header">Подайте заявку на meetup</h2>
-      <form action="/" class="apply-form">
-        <div class="form-group">
-          <input type="text" placeholder="Укажите тему" name="meetup_name" class="text-input">
-        </div>
-        <button class="apply-form__submit">Отправить</button>
-      </form>
-    </section>
+  </section>
+  <section class="apply">
+    <h2 class="apply__header">Подайте заявку на meetup</h2>
+    <form action="/" class="apply-form">
+      <div class="form-group">
+        <input type="text" placeholder="Укажите тему" name="meetup_name" class="text-input">
+      </div>
+      <button class="apply-form__submit">Отправить</button>
+    </form>
+  </section>
+  <section class="vote">
+    <h2>Проголосовать за следющий meetup</h2>
+    <ol class="vote__list">
+      <li class="vote__item">JS meetup 
+        <button class="vote__like-button">
+          <span class="visually-hidden">like</span>
+        </button>
+      </li>
+      <li class="vote__item">SQL meetup 
+        <button class="vote__like-button vote__like-button--liked">
+          <span class="visually-hidden">like</span>
+        </button>
+      </li>
+      <li class="vote__item">CSS meetup 
+        <button class="vote__like-button">
+          <span class="visually-hidden">like</span>
+        </button>
+      </li>
+      <li class="vote__item">HTML meetup 
+        <button class="vote__like-button">
+          <span class="visually-hidden">like</span>
+        </button>
+      </li>
+      <li class="vote__item">Ruby meetup 
+        <button class="vote__like-button">
+          <span class="visually-hidden">like</span>
+        </button>
+      </li>
+    </ol>
   </section>
 </body>
 </html>

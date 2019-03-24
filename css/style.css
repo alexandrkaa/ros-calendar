@@ -1,10 +1,34 @@
+/* stylelint-disable */
+.visually-hidden {
+  position: absolute;
+
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+/* stylelint-enable */
+
 .calendar-page,
-.apply {
+.apply,
+.vote {
   max-width: 1024px;
   margin: 0 auto;
   font-size: 14px;
   line-height: 17px;
   font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .calendar-page,
+  .apply,
+  .vote {
+    padding: 0 10px;
+  }
 }
 
 .calendar-header {
@@ -79,6 +103,30 @@
   margin-left: calc(100% / 7 * 6);
 }
 
+@media screen and (max-width: 768px) {
+  .calendar {
+    flex-direction: column;
+  }
+
+  .calendar__day {
+    width: 100%;
+    display: none;
+  }
+
+  .calendar__day2,
+  .calendar__day3,
+  .calendar__day4,
+  .calendar__day5,
+  .calendar__day6,
+  .calendar__day7 {
+    margin: 0;
+  }
+
+  .calendar__day--has-events {
+    display: block;
+  }
+}
+
 .calendar__day-day {
   position: absolute;
   bottom: 5px;
@@ -117,6 +165,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  padding: 5px;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: #df0031;
+}
+
+.button:active,
+.button:focus {
+  text-decoration: underline;
+  color: #000000;
 }
 
 /*** APPLY ***/
@@ -164,4 +226,64 @@
   line-height: 17px;
   padding: 10px 20px;
   margin-top: 20px;
+  background-color: #ffffff;
+}
+
+.apply-form__submit:hover {
+  border: 1px solid #df0031;
+}
+
+.vote__list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  counter-reset: vote;
+}
+
+.vote__item {
+  font-size: 17px;
+  line-height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-left: 30px;
+}
+
+.vote__item::before {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: -10px;
+  counter-increment: vote;
+  content: counter(vote)".";
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.vote__like-button {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  background-image: url("../img/vote.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+}
+
+.vote__like-button:hover {
+  background-image: url("../img/vote-hover.svg");
+}
+
+.vote__like-button--liked {
+  background-image: url("../img/vote-voted.svg"); 
 }
