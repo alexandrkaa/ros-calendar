@@ -104,6 +104,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .calendar-header__day span {
+    display: none;
+  }
+  
   .calendar {
     flex-direction: column;
   }
@@ -244,12 +248,20 @@
   border: 1px solid #df0031;
 }
 
+.vote {
+  padding-top: 30px;
+}
+
 .vote__list {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   counter-reset: vote;
+}
+
+.vote__header {
+  text-align: center;
 }
 
 .vote__item {
