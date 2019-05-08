@@ -1,0 +1,7 @@
+tools - https://news.websoft.ru/view_doc.html?mode=doc_type&custom_web_template_id=6180275463021353212&doc_id=6181289497353023487
+tables - https://news.websoft.ru/view_doc.html?mode=catalogs&doc_id=5900009198344233396
+js - https://news.websoft.ru/view_doc.html?mode=js_functions
+
+
+tools.start_agent(6322303950427328259);
+tools.insert_person_into_group(_persons.id, _group.id,null,doc_group);
